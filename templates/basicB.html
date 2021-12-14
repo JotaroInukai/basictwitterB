@@ -3,11 +3,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>HTML</title>
-    <link rel='stylesheet'　 type="text/css"  href="{% static 'style.css' %}"/>
-    <script type="text/javascript" src="{% static 'script.js' %}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel='stylesheet' href="{% static 'style.css' %}"/>
+    <script src="{% static 'script.js' %}"></script>
+   
   </head>
   <header>
     <h1>
@@ -21,7 +20,7 @@
       <br>
      <h1><a><span>下の「開始」ボタンを押し、移動先のページにて10個のTwitterアカウントを判定してください。</span></a></h1>
      <h1><a><span>各アカウントの判定後、各アカウントごとに判定結果をアンケートフォームから回答してください。</span></a></h1>
-
+     <h1><a><span>※ページのリロードを行うと、ページの内容が変わってしまうためリロードは行わないでください。</span></a></h1>
     <form action='./basicB_form' method="POST">
         {% csrf_token %}
 

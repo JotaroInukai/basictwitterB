@@ -1,1 +1,1 @@
-web: gunicorn basicB.wsgi
+web: gunicorn basictwitterB.wsgi
