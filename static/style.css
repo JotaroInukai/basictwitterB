@@ -67,7 +67,7 @@ h3 a{
 }
 
 .acd-check:checked + .acd-label + .acd-content{
-    height: 1600px;
+    height: 1500px;
     opacity: 1;
     padding: 10px;
     visibility: visible;

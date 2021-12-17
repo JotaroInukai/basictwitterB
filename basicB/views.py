@@ -13,6 +13,9 @@ def basicB_form_show(request):
 def basicB_form_show2(request):
     return render(request,"basicBresult2.html")
 
+def basicB_form_show3(request):
+    return render(request,"basicBresult3.html")
+
 
 def basicB_form(request):
 
