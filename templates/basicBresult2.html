@@ -6,26 +6,27 @@
     <title>HTML</title>
     <link rel='stylesheet' href="{% static 'style.css' %}"/>
     <script src="{% static 'script.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <header>
     <h1>
         <a>ページ2</a>
     </h1>
 </header>
+<div style="text-align:center;">
+    <h3><a><span>各アカウントのテキストをクリックして、アカウントの情報を閲覧してください。判定可能になった時点でアンケートフォームから判定結果を回答してください。</span></a></h3>
+    <h3><a><span>10個のアカウントの判定が終わったら作業は終わりになります。</span></a></h3>
+    <h3><a><span>※ページのリロードを行うと、ページの内容が変わってしまうためリロードは行わないでください。</span></a></h3><br>
+    <h3><a><span>※片想い数＝フォローだけしていてフォローバックされていないアカウントの数</span></a></h3>
+    <h3><a><span>※片想われ数＝フォローだけされていてフォローバックしていないアカウントの数</span></a></h3>
+    <h3><a><span>※フォロー返され率＝フォローしているユーザからどれだけフォローバックされているかを表した数値</span></a></h3>
+    <h3><a><span>※フォロー返し率＝フォローされているユーザにどれだけフォローを返しているかを表した数値</span></a></h3>
+    <h3><a><span>※メディア率＝直近600件のツイートのうち、画像や動画などのメディアつきツイートが含まれている割合</span></a></h3>
+    <h3><a><span>※RT率＝直近600件のツイートのうち、RTが占める割合</span></a></h3>
+    <h3><a><span>※リンク含有率＝直近600件のツイートのうち、リンクが含まれるツイートの割合</span></a></h3>
+</div>
 <!-- <form action='./id_form' method="GET"> -->
           {% csrf_token %}
-          <div style="text-align:center;">
-              <h3><a><span>各アカウントのテキストをクリックして、アカウントの情報を閲覧してください。判定可能になった時点でアンケートフォームから判定結果を回答してください。</span></a></h3>
-              <h3><a><span>10個のアカウントの判定が終わったら作業は終わりになります。ご協力ありがとうございます。</span></a></h3>
-              <h3><a><span>※ページのリロードを行うと、ページの内容が変わってしまうためリロードは行わないでください。</span></a></h3>
-              <h3><a><span>※片想い数＝フォローだけしていてフォローバックされていないアカウントの数</span></a></h3>
-              <h3><a><span>※片想われ数＝フォローだけされていてフォローバックしていないアカウントの数</span></a></h3>
-              <h3><a><span>※フォロー返され率＝フォローしているユーザからどれだけフォローバックされているかを表した数値</span></a></h3>
-              <h3><a><span>※フォロー返し率＝フォローされているユーザにどれだけフォローを返しているかを表した数値</span></a></h3>
-              <h3><a><span>※メディア率＝直近600件のツイートのうち、画像や動画などのメディアつきツイートが含まれている割合</span></a></h3>
-              <h3><a><span>※RT率＝直近600件のツイートのうち、RTが占める割合</span></a></h3>
-              <h3><a><span>※リンク含有率＝直近600件のツイートのうち、リンクが含まれるツイートの割合</span></a></h3>
-          </div>
 
 
       <!-- <div style="text-align:center;"> -->
@@ -50,34 +51,34 @@
     <br>
     <br>
 </div>
-<div id="a-box">
-<h2><a><span>・アカウント作成日</span><br></a></h2>
-<h3><a><span>{{A1_result.create_day}}<span></a></h3>
-<h2><a><span>・フォローに関する情報</span><br></a></h2>
-<h3><a><span>フォロー数:{{A1_result.Follow}}　　片想い数:{{A1_result.onlyF.0}}　　フォロー返され率:{{A1_result.onlyF.1}}%<span></a></h3>
-<h2><a><span>・フォロワーに関する情報</span><br></a></h2>
-<h3><a><span>フォロワー数:{{A1_result.Follower}}　　片想われ数:{{A1_result.noreturnF.0}}　　フォロー返し率:{{A1_result.noreturnF.1}}%<span></a></h3>
+ <div id="a-box">
+ <h2><a><span>・アカウント作成日</span><br></a></h2>
+ <h3><a><span>{{A1_result.create_day}}<span></a></h3>
+ <h2><a><span>・フォローに関する情報</span><br></a></h2>
+ <h3><a><span>フォロー数:{{A1_result.Follow}}　　片想い数:{{A1_result.onlyF.0}}　　フォロー返され率:{{A1_result.onlyF.1}}%<span></a></h3>
+ <h2><a><span>・フォロワーに関する情報</span><br></a></h2>
+ <h3><a><span>フォロワー数:{{A1_result.Follower}}　　片想われ数:{{A1_result.noreturnF.0}}　　フォロー返し率:{{A1_result.noreturnF.1}}%<span></a></h3>
 <h2><a><span>・ツイートに関する情報</span><br></a></h2>
-<h3><a><span>総ツイート数:{{A1_result.Alltweet}}　　メディア率:{{A1_result.media}}%　　RT率:{{A1_result.RT}}%　　リンク含有率:{{A1_result.url_ratio}}%<span></a></h3>
-<h2><a> <span>・判定後アンケート</span><br></a></h2>
-<iframe src="{{A1_result.Gform_url}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-</div>
-</div>
+ <h3><a><span>総ツイート数:{{A1_result.Alltweet}}　　メディア率:{{A1_result.media}}%　　RT率:{{A1_result.RT}}%　　リンク含有率:{{A1_result.url_ratio}}%<span></a></h3>
+ <h2><a> <span>・判定後アンケート</span><br></a></h2>
+ <iframe src="{{A1_result.Gform_url.1}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+ </div>
+ </div>
 
 
-<input id="acd-checkB2" class="acd-checkB" type="checkbox">
+ <input id="acd-checkB2" class="acd-checkB" type="checkbox">
 <label class="acd-labelB" for="acd-checkB2">アカウント2</label>
 <div class="acd-contentB">
 
 <div style="text-align:center;">
-<span>{{A2_result.user_id}}の判定結果</span><br><br>
+ <span>{{A2_result.user_id}}の判定結果</span><br><br>
 <img src="{{A2_result.img_url}}" width="180" height="180"><br>
 <h3><a><span>{{A2_result.user_name}}</span><br></a></h3>
 <h3><a><span>{{A2_result.user_profile}}</span><br></a></h3>
 
 
-<br>
-<br>
+ <br>
+ <br>
 </div>
 <div id="a-box">
 <h2><a><span>・アカウント作成日</span><br></a></h2>
@@ -89,7 +90,7 @@
 <h2><a><span>・ツイートに関する情報</span><br></a></h2>
 <h3><a><span>総ツイート数:{{A2_result.Alltweet}}　　メディア率:{{A2_result.media}}%　　RT率:{{A2_result.RT}}%　　リンク含有率:{{A2_result.url_ratio}}%<span></a></h3>
 <h2><a> <span>・判定後アンケート</span><br></a></h2>
-<iframe src="{{A2_result.Gform_url}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<iframe src="{{A2_result.Gform_url.1}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 </div>
 </div>
 
@@ -117,7 +118,7 @@
 <h2><a><span>・ツイートに関する情報</span><br></a></h2>
 <h3><a><span>総ツイート数:{{A3_result.Alltweet}}　　メディア率:{{A3_result.media}}%　　RT率:{{A3_result.RT}}%　　リンク含有率:{{A3_result.url_ratio}}%<span></a></h3>
 <h2><a> <span>・判定後アンケート</span><br></a></h2>
-<iframe src="{{A3_result.Gform_url}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<iframe src="{{A3_result.Gform_url.1}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 </div>
 </div>
 
@@ -145,7 +146,7 @@
 <h2><a><span>・ツイートに関する情報</span><br></a></h2>
 <h3><a><span>総ツイート数:{{A4_result.Alltweet}}　　メディア率:{{A4_result.media}}%　　RT率:{{A4_result.RT}}%　　リンク含有率:{{A4_result.url_ratio}}%<span></a></h3>
 <h2><a> <span>・判定後アンケート</span><br></a></h2>
-<iframe src="{{A4_result.Gform_url}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<iframe src="{{A4_result.Gform_url.1}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 </div>
 </div>
 
@@ -173,7 +174,7 @@
 <h2><a><span>・ツイートに関する情報</span><br></a></h2>
 <h3><a><span>総ツイート数:{{A5_result.Alltweet}}　　メディア率:{{A5_result.media}}%　　RT率:{{A5_result.RT}}%　　リンク含有率:{{A5_result.url_ratio}}%<span></a></h3>
 <h2><a> <span>・判定後アンケート</span><br></a></h2>
-<iframe src="{{A5_result.Gform_url}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<iframe src="{{A5_result.Gform_url.1}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 </div>
 </div>
 
@@ -201,7 +202,7 @@
 <h2><a><span>・ツイートに関する情報</span><br></a></h2>
 <h3><a><span>総ツイート数:{{A6_result.Alltweet}}　　メディア率:{{A6_result.media}}%　　RT率:{{A6_result.RT}}%　　リンク含有率:{{A6_result.url_ratio}}%<span></a></h3>
 <h2><a> <span>・判定後アンケート</span><br></a></h2>
-<iframe src="{{A6_result.Gform_url}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<iframe src="{{A6_result.Gform_url.1}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 </div>
 </div>
 
@@ -232,7 +233,7 @@
 <h2><a><span>・ツイートに関する情報</span><br></a></h2>
 <h3><a><span>総ツイート数:{{A7_result.Alltweet}}　　メディア率:{{A7_result.media}}%　　RT率:{{A7_result.RT}}%　　リンク含有率:{{A7_result.url_ratio}}%<span></a></h3>
 <h2><a> <span>・判定後アンケート</span><br></a></h2>
-<iframe src="{{A7_result.Gform_url}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<iframe src="{{A7_result.Gform_url.1}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 </div>
 </div>
 
@@ -262,7 +263,7 @@
 <h2><a><span>・ツイートに関する情報</span><br></a></h2>
 <h3><a><span>総ツイート数:{{A8_result.Alltweet}}　　メディア率:{{A8_result.media}}%　　RT率:{{A8_result.RT}}%　　リンク含有率:{{A8_result.url_ratio}}%<span></a></h3>
 <h2><a> <span>・判定後アンケート</span><br></a></h2>
-<iframe src="{{A8_result.Gform_url}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<iframe src="{{A8_result.Gform_url.1}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 </div>
 </div>
 
@@ -290,7 +291,7 @@
 <h2><a><span>・ツイートに関する情報</span><br></a></h2>
 <h3><a><span>総ツイート数:{{A9_result.Alltweet}}　　メディア率:{{A9_result.media}}%　　RT率:{{A9_result.RT}}%　　リンク含有率:{{A9_result.url_ratio}}%<span></a></h3>
 <h2><a> <span>・判定後アンケート</span><br></a></h2>
-<iframe src="{{A9_result.Gform_url}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<iframe src="{{A9_result.Gform_url.1}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 </div>
 </div>
 
@@ -318,16 +319,18 @@
 <h2><a><span>・ツイートに関する情報</span><br></a></h2>
 <h3><a><span>総ツイート数:{{A10_result.Alltweet}}　　メディア率:{{A10_result.media}}%　　RT率:{{A10_result.RT}}%　　リンク含有率:{{A10_result.url_ratio}}%<span></a></h3>
 <h2><a> <span>・判定後アンケート</span><br></a></h2>
-<iframe src="{{A10_result.Gform_url}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<iframe src="{{A10_result.Gform_url.1}}"width="720" height="486" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 </div>
 </div>
+
 <div style="text-align:end">
 <form action='./basicB_form_show3' method="POST">
-   {% csrf_token %}
+    {% csrf_token %}
 
 
 
 <button type="submit" name="button"><font size="6">次へ</font></button>
+
 </form>
 </div>
 </body>
