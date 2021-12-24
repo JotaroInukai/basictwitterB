@@ -174,8 +174,7 @@ def basicB_form2(request):
     s="S"+str(listofint[18])
     t="S"+str(listofint[19])
     def2acountlist=[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t]
-    print(listofint)
-    print(def2acountlist)
+ 
     for x in def2acountlist:
         try:
             del sagidict[x]
@@ -237,13 +236,12 @@ def basicB_form4(request):
     sagidict=sagilist()
     hisagidict=hisagilist()
     data=request.POST.get("hidden_data")
-    print(data)
+    
     splitdata=(data.split(","))
-    print(splitdata)
+    
     map_object = map(int, splitdata)
     listofint=list(map_object)
-    print(listofint)
-    print(listofint[2],listofint[3])
+   
     a="S"+str(listofint[0])
     b="S"+str(listofint[1])
     c="S"+str(listofint[2])
@@ -265,8 +263,7 @@ def basicB_form4(request):
             del hisagidict[y]
         except KeyError:
             pass
-    print(list(sagidict.keys()))
-    print(list(hisagidict.keys()))
+    
     def2sagilist=list(sagidict.keys())
     def2hisagilist=list(hisagidict.keys())
     random.shuffle(def2sagilist)
@@ -299,7 +296,7 @@ def basicB_form4(request):
     A9_result=groupA[8]
     A10_result=groupA[9]
 
-    print("def2")
+    
 
     payload={
         'A1_result':A1_result,
